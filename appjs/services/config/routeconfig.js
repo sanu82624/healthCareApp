@@ -33,6 +33,10 @@ angular.module('routerConfigModule', ['ngRoute'])
 					templateUrl	: 'views/userMyRequest.html',
 					controller: 'userRequestController as vm'
 			}).
+			when('/reg',{
+					templateUrl	: 'views/userRegistration.html',
+					controller: 'userRegistrationController as vm'
+			}).
 			otherwise({
 
 				redirectTo : '/appHome'
