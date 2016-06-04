@@ -1,19 +1,39 @@
 <script type="text/ng-template" id="views/userRegistration.html">
+<form name="userRegForm" novalidate="novalidate" id="userRegForm">
 <div class="container">
     <p class="form-group">
-		<label>Name</label>
-		<input type="text" ng-model="vm.name" class="form-control">
+		<label>Email/Login Id*</label>
+		<span class="error-msg-span" 
+			ng-show="userRegForm.$submitted && (userRegForm.txtEmail.$error.pattern || 
+					userRegForm.txtEmail.$error.required)">{{vm.emailMsg}}</span>
+		<input type="text" id="txtEmail" name="txtEmail" ng-pattern="vm.validEmail" 
+			 ng-model="vm.email" class="form-control" required>
 	</p>
 	<p class="form-group">
-		<label>Gender</label>
-		<select ng-model="vm.gender" class="form-control">
+		<label>Password*</label>
+		<span class="error-msg-span" 
+			ng-show="userRegForm.$submitted && 
+					userRegForm.txtPass.$error.required">{{vm.passMsg}}</span>
+		<input type="password" id="txtPass" name="txtPass" 
+			ng-model="vm.pass" class="form-control" required>
+	</p>
+	<p class="form-group">
+		<label>Name*</label>
+		<span class="error-msg-span" 
+			ng-show="userRegForm.$submitted && (userRegForm.txtName.$error.pattern || 
+					userRegForm.txtName.$error.required)">Enter valid name!</span>
+		<input type="text" id="txtName" name="txtName" ng-pattern="vm.validName" 
+			ng-model="vm.name" class="form-control" required>
+	</p>
+	<p class="form-group">
+		<label>Gender*</label>
+		<span class="error-msg-span" 
+			ng-show="userRegForm.$submitted &&  
+					userRegForm.txtGender.$error.required">Select gender!</span>
+		<select ng-model="vm.gender" id="txtGender" name="txtGender" class="form-control" required>
 			<option value="Male">Male</option>
 			<option value="Male">Female</option>
 		</select>
-	</p>
-	<p class="form-group">
-		<label>Email</label>
-		<input type="text" ng-model="vm.email" class="form-control">
 	</p>
 	<p class="form-group">
 		<label>Address</label>
@@ -24,9 +44,22 @@
 		<input type="text" ng-model="vm.pin" class="form-control">
 	</p>
 	<p class="form-group">
-		<label>Phone</label>
-		<input type="text" ng-model="vm.phone" class="form-control">
+		<label>Phone*</label>
+		<span class="error-msg-span" 
+			ng-show="userRegForm.$submitted && (userRegForm.txtPhone.$error.pattern || 
+					userRegForm.txtPhone.$error.required)">Enter valid phone!</span>
+		<input type="text" id="txtPhone" name="txtPhone" ng-pattern="vm.validPhone" 
+			class="form-control" ng-model="vm.phone" required>
 	</p>
+	<div class="row">
+		<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6" >
+			<p >
+				<button class="btn btn-sq-lg btn-rec-sm btn-primary" ng-click="vm.onSaveClick();" type="submit">
+					<h5>Submit</h5>
+				</button>
+			</p>
+		</div>
+	</div>
 </div><!-- Container -->
-
+</form>
 </script>

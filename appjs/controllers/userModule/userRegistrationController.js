@@ -1,9 +1,14 @@
 
 angular.module('cmaManagementApp').controller('userRegistrationController',[
-	'commonUtility', 'defaultValues', 'userBusiness', '$nativeAPI', 'messages',
-	function(commonUtility, defaultValues, userBusiness, $nativeAPI, messages){
+	'validationPattern', 'messages',
+	function(validationPattern, messages){
 		
 		var vm = this;
 		
+		vm.validName = validationPattern.NAME;
+		vm.validEmail = validationPattern.EMAIL;
+		vm.validPhone = validationPattern.PHONE;
+		vm.emailMsg = messages.VALID_EMAIL;
+		vm.passMsg = messages.VALID_PASS;
 	}
 ]);
