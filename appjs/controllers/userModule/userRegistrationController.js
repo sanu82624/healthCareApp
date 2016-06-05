@@ -10,5 +10,6 @@ angular.module('cmaManagementApp').controller('userRegistrationController',[
 		vm.validPhone = validationPattern.PHONE;
 		vm.emailMsg = messages.VALID_EMAIL;
 		vm.passMsg = messages.VALID_PASS;
+		vm.userTypeMsg = messages.VALID_USER_TYPE
 	}
 ]);

@@ -6,5 +6,6 @@ angular.module('cmaManagementApp')
       CREATE_REQUEST_SUCCESS: "Request created successfully",
 	  CREATE_REQUEST_ERROR: "Request could not be created",
 	  VALID_EMAIL: "Enter valid email!",
-	  VALID_PASS: "Enter valid password!"
+	  VALID_PASS: "Enter valid password!",
+	  VALID_USER_TYPE: "Select valid type!"
   });
