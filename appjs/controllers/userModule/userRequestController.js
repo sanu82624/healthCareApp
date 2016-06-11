@@ -41,8 +41,12 @@ angular.module('cmaManagementApp').controller('userRequestController',[
 			request.channel = defaultValues.REQUEST_CHANNEL;
 			
 			userBusiness.createNewRequest(request).then(function(response){
-				$nativeAPI.showAlert(messages.CREATE_REQUEST_SUCCESS);
-				commonUtility.redirectTo("userLanding");
+				if(response.data.success){
+					$nativeAPI.showAlert(messages.CREATE_REQUEST_SUCCESS);
+					commonUtility.redirectTo("userLanding");
+				} else{
+					$nativeAPI.showAlert(messages.CREATE_REQUEST_ERROR);
+				}
 			}, function(error){
 				$nativeAPI.showAlert(messages.CREATE_REQUEST_ERROR);
 			});

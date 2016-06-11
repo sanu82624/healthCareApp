@@ -22,7 +22,7 @@ angular.module('cmaManagementApp')
         requestObj = {
                         method: 'POST', 
                         url: urlString,
-                        data: postData,
+                        //data: postData,
                         headers: generateConfig()
                     };
         httpPromise = $http(requestObj);

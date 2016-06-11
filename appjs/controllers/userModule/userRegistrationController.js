@@ -1,7 +1,9 @@
 
 angular.module('cmaManagementApp').controller('userRegistrationController',[
-	'validationPattern', 'messages',
-	function(validationPattern, messages){
+	'validationPattern', 'messages', 'userBusiness', 'commonUtility', '$nativeAPI',
+	'$rootScope',
+	function(validationPattern, messages, userBusiness, commonUtility, $nativeAPI,
+	$rootScope){
 		
 		var vm = this;
 		
@@ -10,6 +12,37 @@ angular.module('cmaManagementApp').controller('userRegistrationController',[
 		vm.validPhone = validationPattern.PHONE;
 		vm.emailMsg = messages.VALID_EMAIL;
 		vm.passMsg = messages.VALID_PASS;
-		vm.userTypeMsg = messages.VALID_USER_TYPE
+		
+		vm.onSaveClick = function(){
+			
+			var userInfo = {};
+			userInfo.name = vm.name;
+			userInfo.age = vm.age;
+			userInfo.address = vm.address;
+			userInfo.pinCode = vm.pin;
+			userInfo.gender = vm.gender;
+			userInfo.phone = [vm.phone];
+			userInfo.emailId = [vm.email];
+			userInfo.password = vm.pass;
+			
+			userBusiness.registerUser(userInfo).then(function(response){
+				if(response.data.success){
+					$nativeAPI.showAlert(messages.USER_REG_SUCCESS);
+					console.info(response);
+					$rootScope.IS_SIGN_IN = response.data.success;
+					$rootScope.NAME = response.data.result.name;
+					$rootScope.ID = response.data.result.clientId;
+					commonUtility.redirectTo("userLanding");
+				} else{
+					$nativeAPI.showAlert(messages.USER_REG_FAIL);
+				}
+			}, function(error){
+				$nativeAPI.showAlert(messages.USER_REG_FAIL);
+			});
+		};
+		
+		vm.onCancelClick = function(){
+			commonUtility.redirectTo("login");
+		};
 	}
 ]);

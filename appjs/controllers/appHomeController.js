@@ -10,7 +10,7 @@ angular.module('cmaManagementApp').controller('appHomeController',['commonUtilit
 		};
 		
 		vm.onOnGroundVendorClick = function(){
-			commonUtility.redirectTo("onGroundVendorHome");
+			commonUtility.redirectTo("groundVendorHome");
 		};
 		
 		vm.onMonitoringGrpClick = function(){
@@ -18,7 +18,11 @@ angular.module('cmaManagementApp').controller('appHomeController',['commonUtilit
 		};
 		
 		vm.onUserManagementClick = function(){
-			commonUtility.redirectTo("userLanding");
+			commonUtility.redirectTo("login");
+		};
+		
+		vm.onUserRegistrationClick = function(){
+			commonUtility.redirectTo("reg");
 		};
 
 }])

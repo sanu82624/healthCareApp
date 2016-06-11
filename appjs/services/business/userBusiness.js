@@ -13,6 +13,16 @@ angular.module('cmaManagementApp')
         
         return userData.loadMyRequests(userId);
     };
+	
+	userBusiness.validateUser = function(email, pass) {
+        
+        return userData.validateUser(email, pass);
+    };
+	
+	userBusiness.registerUser = function(request) {
+        
+        return userData.registerUser(request);
+    };
 
 	return userBusiness;
   });

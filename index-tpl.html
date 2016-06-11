@@ -14,15 +14,17 @@
    <script src="appjs/main.js"></script>
    <script src="appjs/services/config/nativeutil.js"></script>
    <script src="appjs/controllers/monitoringGroupModule/monitoringGroupController.js"></script>
-   <script src="appjs/controllers/onGroundVendorModule/onGroundVendorController.js"></script>
+   <script src="appjs/controllers/groundVendorModule/groundVendorController.js"></script>
    <script src="appjs/controllers/serviceManagementModule/serviceManagementController.js"></script>
    <script src="appjs/controllers/userModule/userHomeController.js"></script>
+   <script src="appjs/controllers/userModule/userLoginController.js"></script>
    <script src="appjs/controllers/appHomeController.js"></script>
    <script src="appjs/navbarcontroller.js"></script>
    <script src="appjs/services/config/routeconfig.js"></script>
    <script src="appjs/services/utility/commonUtility.js"></script>
    <script src="appjs/controllers/userModule/userRequestController.js"></script>
    <script src="appjs/controllers/userModule/userRegistrationController.js"></script>
+   <script src="appjs/controllers/userModule/userProfileController.js"></script>
    <script src="appjs/services/config/dataLayer.js"></script>
    <script src="appjs/services/config/appconfig.js"></script>
    <script src="appjs/services/config/apprun.js"></script>
@@ -33,7 +35,9 @@
    <script src="appjs/services/constant/validationPattern.js"></script>
    <script src="appjs/services/utility/commonUtility.js"></script>
    <script src="appjs/services/data/userData.js"></script>
+   <script src="appjs/services/data/vendorData.js"></script>
    <script src="appjs/services/business/userBusiness.js"></script>
+   <script src="appjs/services/business/vendorBusiness.js"></script>
    
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/app.css" rel="stylesheet">
@@ -48,11 +52,15 @@
   <!-- Since we are not not serving from  web server,, we need to include all the teamplates here -->
 	<!-- @include views/appHome.html -->
   <!-- @include views/serviceManagementLanding.html -->
-  <!-- @include views/onGroundVendorLanding.html -->
+  <!-- @include views/groundVendorLanding.html -->
+  <!-- @include views/vendorRaisedRequest.html -->
   <!-- @include views/monitoringGroupLanding.html -->
   <!-- @include views/userlanding.html -->
   <!-- @include views/userNewRequest.html -->
   <!-- @include views/userMyRequest.html -->
   <!-- @include views/userRegistration.html -->
+  <!-- @include views/userLogin.html -->
+  <!-- @include views/userProfile.html -->
+  <!-- @include views/userMedicalHistory.html -->
 </body>
  </html>

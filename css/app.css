@@ -52,6 +52,23 @@
 	margin-bottom: 10px;
 }
 
+.list-box{
+	width: 98%;
+}
+
+.page-title{
+	margin: -1em 0 0.5em 0;
+	font-weight: 500;
+	font-family: sans-serif;
+	position: relative;
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+	font-size: 14px;
+	line-height: 30px;
+	color: #355681;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(53,86,129, 0.3);
+}
+
 .glyphicon {
     font-size: 30px   ;
 }
@@ -70,6 +87,13 @@
 	float: right; 
 	color: red; 
 	font-size: 8pt;
+}
+
+.btn-delete-row{
+	display:inline; 
+	cursor:pointer; 
+	padding-right:5px; 
+	color:red;
 }
 
 body{

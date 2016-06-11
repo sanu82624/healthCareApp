@@ -14,5 +14,15 @@ angular.module('cmaManagementApp')
         return dataLayer.getAsync(relativeUrls.MY_REQUEST + userId);
     };
 	
+	userData.validateUser = function(email, pass) {
+        
+        return dataLayer.postAsync(relativeUrls.LOGIN_VALIDATE + "?email="+email+"&password="+pass, {});
+    };
+	
+	userData.registerUser = function(request) {
+        
+        return dataLayer.postAsync(relativeUrls.USER_REG, request);
+    };
+	
 	return userData;
   });

@@ -4,16 +4,16 @@ angular.module('cmaManagementApp').controller('userHomeController',['commonUtili
 		
 		var vm = this;
 		
-		vm.onHomeClick = function(){
-			commonUtility.redirectTo("appHome");
-		};
-		
 		vm.onNewRequestClick = function(){
 			commonUtility.redirectTo("newReq");
 		};
 		
 		vm.onMyRequestClick = function(){
 			commonUtility.redirectTo("myReq");
+		};
+		
+		vm.onProfileClick = function(){
+			commonUtility.redirectTo("userProfile");
 		};
 	}
 ]);

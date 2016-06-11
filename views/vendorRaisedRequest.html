@@ -1,8 +1,7 @@
-<script type="text/ng-template" id="views/userMyRequest.html">
+<script type="text/ng-template" id="views/vendorRaisedRequest.html">
 <div class="container" ng-init="vm.onloadMyRequests();">
-	<div class="page-title">My Requests</div>
 	<div>
-		<div class="info-box" ng-repeat="request in vm.myRequests | orderBy: '-createDate'">
+		<div class="info-box" ng-repeat="request in vm.requests | orderBy: '-createDate'">
 			<p>
 				<span>Id: {{request.requestId.replace('SRV-REQ-ID-','')}}</span></br>
 				<span>Requested for: {{request.type}}</span></br>

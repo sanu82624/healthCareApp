@@ -1,41 +1,42 @@
 <script type="text/ng-template" id="views/userlanding.html">
 <div class="container">
-      	<div class="row" style="text-align: center;">
-        	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
-          		<p>
-            		<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onMyRequestClick();">
-                		<span class="glyphicon glyphicon-eye-open"></span><br/>
-                			<h5>My <br/>Requests</h5>
-            		</button>
-            	</p>
-        	</div>
-        	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
-          		<p>
-            		<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onNewRequestClick();">
-                		<span class="glyphicon glyphicon-edit"></span><br/>
-                			<h5>New <br/> Request</h5>
-            		</button>
-            	</p>
-        	</div>
-       	</div> <!-- End of Row 1 -->
-      	<div class="row" style="text-align: center;">
-        	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6" >
-          		<p >
-            		<button class="btn btn-sq-lg btn-sq btn-primary" >
-                		<span class="glyphicon glyphicon-adjust"></span><br/>
-                			<h5>Service <br/> Orchestration <br/> Management </h5>
-            		</button>
-            	</p>
-        	</div>
-        	<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6" >
-          		<p>
-            		<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onHomeClick();">
-                		<span class="glyphicon glyphicon-home"></span><br/>
-                			<h5>Home</h5>
-            		</button>
-            	</p>
-        	</div>
-       	</div> <!-- End of Row 2 -->
+	<div class="page-title">Home</div>
+	<div class="row" style="text-align: center;">
+		<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+			<p>
+				<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onMyRequestClick();">
+					<span class="glyphicon glyphicon-eye-open"></span><br/>
+						<h5>My <br/>Requests</h5>
+				</button>
+			</p>
+		</div>
+		<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+			<p>
+				<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onNewRequestClick();">
+					<span class="glyphicon glyphicon-edit"></span><br/>
+						<h5>New <br/> Request</h5>
+				</button>
+			</p>
+		</div>
+	</div> <!-- End of Row 1 -->
+	<div class="row" style="text-align: center;">
+		<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6" >
+			<p >
+				<button class="btn btn-sq-lg btn-sq btn-primary" ng-click="vm.onProfileClick();">
+					<span class="glyphicon glyphicon-user"></span><br/>
+						<h5>Profile</h5>
+				</button>
+			</p>
+		</div>
+		<div class="col-lg-6 col-sm-6 col-xs-6 col-md-6" >
+			<p>
+				<button class="btn btn-sq-lg btn-sq btn-primary">
+					<span class="glyphicon glyphicon-off"></span><br/>
+						<h5>Logout</h5>
+				</button>
+			</p>
+		</div>
+	</div> <!-- End of Row 2 -->
 </div><!-- Container -->
 
 </script>
