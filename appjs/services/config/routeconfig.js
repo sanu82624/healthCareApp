@@ -15,7 +15,7 @@ angular.module('routerConfigModule', ['ngRoute'])
 				}).
 			when('/groundVendorHome',{
 					templateUrl: 'views/groundVendorLanding.html',
-					controller: 'groundVendorController as vm'
+					controller: 'vendorRequestController as vm'
 			}).
 			when('/vendorRaisedReq',{
 					templateUrl: 'views/vendorRaisedRequest.html',
@@ -52,6 +52,14 @@ angular.module('routerConfigModule', ['ngRoute'])
 			when('/userMH',{
 					templateUrl	: 'views/userMedicalHistory.html',
 					controller: 'userProfileController as vm'
+			}).
+			when('/vendorLogin',{
+					templateUrl	: 'views/groundVendorLogin.html',
+					controller: 'groundVendorLoginController as vm'
+			}).
+			when('/vendorReg',{
+					templateUrl	: 'views/vendorRegistration.html',
+					controller: 'vendorRegistrationController as vm'
 			}).
 			otherwise({
 

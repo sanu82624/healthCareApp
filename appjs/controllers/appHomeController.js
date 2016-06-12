@@ -1,6 +1,7 @@
 
-angular.module('cmaManagementApp').controller('appHomeController',['commonUtility',
-	function(commonUtility){
+angular.module('cmaManagementApp').controller('appHomeController',[
+	'commonUtility', '$rootScope',
+	function(commonUtility, $rootScope){
 	    // var deviceId =  $nativeAPI.getConfig('deviceId');
 
 		var vm = this;
@@ -10,7 +11,7 @@ angular.module('cmaManagementApp').controller('appHomeController',['commonUtilit
 		};
 		
 		vm.onOnGroundVendorClick = function(){
-			commonUtility.redirectTo("groundVendorHome");
+			commonUtility.redirectTo("vendorLogin");
 		};
 		
 		vm.onMonitoringGrpClick = function(){
@@ -25,4 +26,25 @@ angular.module('cmaManagementApp').controller('appHomeController',['commonUtilit
 			commonUtility.redirectTo("reg");
 		};
 
+		$rootScope.serviceTypes = [
+			{
+				code : 'AMB', 
+				desc: 'Ambulance',
+				symbol: 'glyphicon glyphicon-plus'
+			},
+			{
+				code : 'MED', 
+				desc: 'Medicine',
+				symbol: 'glyphicon glyphicon-tint'
+			},
+			{
+				code : 'ASST', 
+				desc: 'Medical Assistance',
+				symbol: 'glyphicon glyphicon-adjust'
+			},
+			{
+				code : 'DOC', 
+				desc: 'Doctor',
+				symbol: 'glyphicon glyphicon-plus-sign'
+			}];
 }])

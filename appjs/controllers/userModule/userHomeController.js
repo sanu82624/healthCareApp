@@ -15,5 +15,9 @@ angular.module('cmaManagementApp').controller('userHomeController',['commonUtili
 		vm.onProfileClick = function(){
 			commonUtility.redirectTo("userProfile");
 		};
+		
+		vm.onLogoutClick = function(){
+			commonUtility.redirectTo("appHome");
+		};
 	}
 ]);

@@ -38,7 +38,7 @@ angular.module('cmaManagementApp').controller('userProfileController',[
 			console.info(record);
 			for(var index=0; index<=vm.medHisRecords.length - 1; index++){
 				if(vm.medHisRecords[index] === record){
-					//vm.medHisRecords.remove(record);
+					vm.medHisRecords.splice(index, 1);
 					console.info(vm.medHisRecords);
 					return;
 				}
