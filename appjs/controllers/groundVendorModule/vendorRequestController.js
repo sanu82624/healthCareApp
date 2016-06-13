@@ -28,8 +28,12 @@ angular.module('cmaManagementApp').controller('vendorRequestController',[
 			}
 		}
 		
-		vm.onHomeClick = function(){
-			commonUtility.redirectTo("appHome");
+		vm.onBacktoVendorHome = function(){
+			commonUtility.redirectTo("groundVendorHome");
+		};
+		
+		vm.onCurrentReqClick = function(){
+			commonUtility.redirectTo("vendorAllReq");
 		};
 		
 		initialized();
