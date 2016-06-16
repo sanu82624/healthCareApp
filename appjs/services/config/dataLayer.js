@@ -22,8 +22,23 @@ angular.module('cmaManagementApp')
         requestObj = {
                         method: 'POST', 
                         url: urlString,
-                        //data: postData,
+                        data: postData,
                         headers: generateConfig()
+                    };
+        httpPromise = $http(requestObj);
+        return httpPromise;
+    };
+	
+	this.postWithUrlAsync = function(relativeUrl){
+        
+        var urlString = buildUrl(relativeUrl);
+        
+        var httpPromise = null;
+        var requestObj = {};
+        requestObj = {
+                        method: 'POST', 
+                        url: urlString,
+						headers: {"content-type": "application/json"}
                     };
         httpPromise = $http(requestObj);
         return httpPromise;

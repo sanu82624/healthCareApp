@@ -24,20 +24,13 @@ angular.module('cmaManagementApp').controller('userRequestController',[
 		
 		vm.createNewRequest = function(serviceType){
 			var request = {};
-			request.requestId = guid(); //
-			request.status = "New"; //
 			request.type = serviceType;
 			request.latitude = 0;
 			request.longitude = 0;
-			request.clientId = 1;
+			request.clientId = $rootScope.ClientId;
 			request.channel = defaultValues.REQUEST_CHANNEL;
 			
-			if($rootScope.requests !== null && angular.isUndefined($rootScope.requests)){
-				$rootScope.requests = [];
-			}
-			$rootScope.requests.push(request);
-			$nativeAPI.showAlert(messages.CREATE_REQUEST_SUCCESS);
-			/*userBusiness.createNewRequest(request).then(function(response){
+			userBusiness.createNewRequest(request).then(function(response){
 				if(response.data.success){
 					$nativeAPI.showAlert(messages.CREATE_REQUEST_SUCCESS);
 					commonUtility.redirectTo("userLanding");
@@ -46,22 +39,16 @@ angular.module('cmaManagementApp').controller('userRequestController',[
 				}
 			}, function(error){
 				$nativeAPI.showAlert(messages.CREATE_REQUEST_ERROR);
-			});*/
+			});
 		};
 		
 		vm.onLoadMyRequests = function(){
-			if($rootScope.requests !== "undefined"){
-				vm.myRequests = $rootScope.requests;
-			} else{
-				vm.myRequests = [];
-			}
-			
-			/*userBusiness.loadMyRequests(1).then(function(response){
+			userBusiness.loadMyRequests($rootScope.ClientId).then(function(response){
 				vm.myRequests = response.data.result;
 				console.info(vm.myRequests);
 			}, function(error){
-				console.info('asdsad');
-			});*/
+				console.info(error);
+			});
 		};
 	}
 ]);

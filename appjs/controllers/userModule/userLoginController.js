@@ -1,7 +1,7 @@
 
 angular.module('cmaManagementApp').controller('userLoginController',[
-	'messages', 'userBusiness', 'commonUtility', '$nativeAPI',
-	function(messages, userBusiness, commonUtility, $nativeAPI){
+	'messages', 'userBusiness', 'commonUtility', '$nativeAPI', '$rootScope',
+	function(messages, userBusiness, commonUtility, $nativeAPI, $rootScope){
 		
 		var vm = this;
 		
@@ -9,16 +9,16 @@ angular.module('cmaManagementApp').controller('userLoginController',[
 		vm.passMsg = messages.VALID_PASS;
 		
 		vm.onLoginClick = function(){
-			commonUtility.redirectTo("userLanding");
-			/*userBusiness.validateUser(vm.email,vm.pass).then(function(response){
+			userBusiness.validateUser(vm.email,vm.pass).then(function(response){
 				if(response.data.success){
+					$rootScope.ClientId = response.data.result.clientId;
 					commonUtility.redirectTo("userLanding");
 				} else{
 					$nativeAPI.showAlert(messages.USER_LOGIN_WRONG);
 				}
 			}, function(error){
 				$nativeAPI.showAlert(messages.USER_LOGIN_FAIL);
-			});*/
+			});
 		};
 		
 		vm.onCreateAccountClick = function(){

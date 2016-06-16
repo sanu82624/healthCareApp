@@ -16,7 +16,7 @@ angular.module('cmaManagementApp')
 	
 	userData.validateUser = function(email, pass) {
         
-        return dataLayer.postAsync(relativeUrls.LOGIN_VALIDATE + "?email="+email+"&password="+pass, {});
+        return dataLayer.postWithUrlAsync(relativeUrls.LOGIN_VALIDATE + "?email="+email+"&password="+pass);
     };
 	
 	userData.registerUser = function(request) {
