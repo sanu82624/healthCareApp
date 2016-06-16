@@ -32,7 +32,7 @@ angular.module('cmaManagementApp').controller('userRegistrationController',[
 					$rootScope.IS_SIGN_IN = response.data.success;
 					$rootScope.NAME = response.data.result.name;
 					$rootScope.ID = response.data.result.clientId;
-					commonUtility.redirectTo("userLanding");
+					commonUtility.redirectTo("groundVendorHome");
 				} else{
 					$nativeAPI.showAlert(messages.USER_REG_FAIL);
 				}

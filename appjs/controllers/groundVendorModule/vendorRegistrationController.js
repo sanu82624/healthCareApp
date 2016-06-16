@@ -18,7 +18,33 @@ angular.module('cmaManagementApp').controller('vendorRegistrationController',[
 		}
 		
 		vm.onSaveClick = function(){
+			var vendorInfo = {};
+			vendorInfo.login = vm.email;
+			vendorInfo.password = vm.pass;
+			vendorInfo.vendorDetails = {};
+			vendorInfo.vendorDetails.name = vm.name;
+			vendorInfo.vendorDetails.vendType = vm.type;
+			vendorInfo.vendorDetails.address = vm.address;
+			vendorInfo.vendorDetails.description = vm.desc;
+			vendorInfo.vendorDetails.pin = vm.pin;
+			vendorInfo.vendorDetails.contacts = [vm.phone];
+			vendorInfo.vendorDetails.active = true;
 			
+			
+			vendorBusiness.registerVendor(vendorInfo).then(function(response){
+				if(response.data.success){
+					$nativeAPI.showAlert(messages.USER_REG_SUCCESS);
+					$rootScope.IS_SIGN_IN = response.data.success;
+					$rootScope.NAME = response.data.result.name;
+					$rootScope.ID = response.data.result.vendId;
+					$rootScope.vendorType = response.data.result.vendType;
+					commonUtility.redirectTo("userLanding");
+				} else{
+					$nativeAPI.showAlert(messages.USER_REG_FAIL);
+				}
+			}, function(error){
+				$nativeAPI.showAlert(messages.USER_REG_FAIL);
+			});
 		};
 		
 		vm.onCancelClick = function(){
