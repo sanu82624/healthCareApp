@@ -12,6 +12,8 @@ angular.module('cmaManagementApp').controller('userLoginController',[
 			userBusiness.validateUser(vm.email,vm.pass).then(function(response){
 				if(response.data.success){
 					$rootScope.ClientId = response.data.result.clientId;
+					$rootScope.IS_SIGN_IN = response.data.success;
+					$rootScope.NAME = response.data.result.name;
 					commonUtility.redirectTo("userLanding");
 				} else{
 					$nativeAPI.showAlert(messages.USER_LOGIN_WRONG);

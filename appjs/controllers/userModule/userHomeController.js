@@ -19,6 +19,8 @@ angular.module('cmaManagementApp').controller('userHomeController',[
 		
 		vm.onLogoutClick = function(){
 			$rootScope.ClientId = "";
+			$rootScope.IS_SIGN_IN = false;
+			$rootScope.NAME = "";
 			commonUtility.redirectTo("appHome");
 		};
 	}

@@ -12,20 +12,12 @@ angular.module('cmaManagementApp').controller('vendorRequestController',[
 		}
 		
 		function loadRaisedRequests(){
-			/*vendorBusiness.getRaisedRequests("AMB").then(function(response){
+			vendorBusiness.getRaisedRequests($rootScope.vendorType).then(function(response){
 				vm.requests = response.data.result;
 				console.info(vm.requests);
 			}, function(error){
 				
-			});*/
-			if($rootScope.requests !== null){
-				for(var index = 0; index < $rootScope.requests.length; index++){
-					if($rootScope.requests[index].status === "New" && 
-						$rootScope.requests[index].type === $rootScope.vendorType){
-							vm.requests.push($rootScope.requests[index]);
-						}
-				}
-			}
+			});
 		}
 		
 		vm.onBacktoVendorHome = function(){
@@ -34,6 +26,14 @@ angular.module('cmaManagementApp').controller('vendorRequestController',[
 		
 		vm.onCurrentReqClick = function(){
 			commonUtility.redirectTo("vendorAllReq");
+		};
+		
+		vm.onLogoutClick = function(){
+			$rootScope.IS_SIGN_IN = false;
+			$rootScope.NAME = "";
+			$rootScope.ID = "";
+			$rootScope.vendorType = "";
+			commonUtility.redirectTo("appHome");
 		};
 		
 		initialized();
