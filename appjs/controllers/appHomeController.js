@@ -46,5 +46,15 @@ angular.module('cmaManagementApp').controller('appHomeController',[
 				code : 'DOC', 
 				desc: 'Doctor',
 				symbol: 'glyphicon glyphicon-plus-sign'
+			},
+			{
+				code : 'HOSP', 
+				desc: 'Hospital',
+				symbol: 'glyphicon glyphicon-plus-sign'
+			},
+			{
+				code : 'MR', 
+				desc: 'Medical Reprentitive',
+				symbol: 'glyphicon glyphicon-plus-sign'
 			}];
 }])

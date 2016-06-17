@@ -5,7 +5,7 @@
 		<div class="info-box" ng-repeat="request in vm.myRequests | orderBy: '-createDate'">
 			<p>
 				<span>Id: {{request.requestId.replace('SRV-REQ-ID-','')}}</span></br>
-				<span>Requested for: {{request.type}}</span></br>
+				<span>Requested for: {{request.requestType}}</span></br>
 				<span>Status: {{request.status}}</span></br>
 			</p>
 		</div>

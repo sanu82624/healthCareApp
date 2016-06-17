@@ -24,7 +24,7 @@ angular.module('cmaManagementApp').controller('userRequestController',[
 		
 		vm.createNewRequest = function(serviceType){
 			var request = {};
-			request.type = serviceType;
+			request.requestType = serviceType;
 			request.latitude = 0;
 			request.longitude = 0;
 			request.clientId = $rootScope.ClientId;
