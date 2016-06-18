@@ -19,5 +19,10 @@ angular.module('cmaManagementApp')
         return vendorData.validateVendor(email, pass);
     };
 	
+	vendorBusiness.getVendorDetails = function(vendId) {
+        
+        return vendorData.getVendorDetails(vendId);
+    };
+	
 	return vendorBusiness;
   });

@@ -19,5 +19,10 @@ angular.module('cmaManagementApp')
         return dataLayer.postWithUrlAsync(relativeUrls.VENDOR_LOGIN_VALIDATE + "?login="+email+"&password="+pass);
     };
 	
+	vendorData.getVendorDetails = function(vendId) {
+        
+        return dataLayer.getAsync(relativeUrls.VENDOR_DETAILS + vendId);
+    };
+	
 	return vendorData;
   });

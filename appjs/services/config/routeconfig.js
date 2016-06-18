@@ -69,6 +69,10 @@ angular.module('routerConfigModule', ['ngRoute'])
 					templateUrl	: 'views/monitorAllVendor.html',
 					controller: 'monitorAllVendorController as vm'
 			}).
+			when('/monitorVendorDetails',{
+					templateUrl	: 'views/monitorVendorDetails.html',
+					controller: 'monitorVendorDetailsController as vm'
+			}).
 			otherwise({
 
 				redirectTo : '/appHome'

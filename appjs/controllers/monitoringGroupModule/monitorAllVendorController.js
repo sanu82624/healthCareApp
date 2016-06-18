@@ -32,6 +32,11 @@ angular.module('cmaManagementApp').controller('monitorAllVendorController',[
 			commonUtility.redirectTo("monitoringGroupHome");
 		};
 		
+		vm.onVendorDetailsClick = function(vendId){
+			$rootScope.vendId = vendId;
+			commonUtility.redirectTo("monitorVendorDetails");
+		};
+		
 		initialize();
 	}
 ]);

@@ -10,7 +10,7 @@
 	</p>
 	<div>
 		<div class="info-box" ng-repeat="vendor in vm.vendors">
-			<p>
+			<p style="cursor:pointer;" ng-click="vm.onVendorDetailsClick(vendor.vendId);">
 				<span>Name: {{vendor.name}}</span></br>
 				<span>Active: {{vendor.active}}</span></br>
 			</p>
