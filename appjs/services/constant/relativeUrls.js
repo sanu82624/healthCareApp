@@ -11,4 +11,6 @@ angular.module('cmaManagementApp')
 	  VENDOR_REG: "vendor/service/vendor/register",
 	  VENDOR_LOGIN_VALIDATE: "vendor/service/vendor/validate",
 	  VENDOR_RAISED_REQUEST: "vendor/service/requests/assigned/all/",
+	  
+	  MONITOR_ALL_VENDORS: "vendor/service/vendors/",
   });
