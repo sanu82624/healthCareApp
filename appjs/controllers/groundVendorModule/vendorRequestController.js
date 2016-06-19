@@ -36,6 +36,10 @@ angular.module('cmaManagementApp').controller('vendorRequestController',[
 			commonUtility.redirectTo("appHome");
 		};
 		
+		vm.onProfileClick = function(){
+			commonUtility.redirectTo("vendorProfile");
+		};
+		
 		initialized();
 	}
 ]);
